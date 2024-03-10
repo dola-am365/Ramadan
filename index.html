@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan</title>
+    <style>
+        body {
+            background-image: url(Ramadan.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .name-input {
+            padding: 10px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+            width: 300px;
+            background-color: transparent;
+            color: aliceblue;
+        }
+
+        .name-input:focus {
+            border-color: #0088f8;
+        }
+
+        .submit-btn {
+            background-color: #066d96;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .submit-btn:hover {
+            background-color: #27ae60;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-top: 15rem;
+        }
+        #counter{
+            color: #fff;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            color: #fff;
+            
+        }
+        /* Add these styles to your existing CSS */
+
+.message-container {
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.message-header {
+    color: #27ae60;
+    font-size: 1.5rem;
+}
+
+.message-body {
+    line-height: 1.6;
+    color: #fff;
+}
+
+.message-body strong {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+footer{
+    color: #fff;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainContent">
+        <h1>&dArr;Enter Your Name&dArr;</h1>
+        <form onsubmit="handleForm(event)">
+            <input type="text" class="name-input" id="nameInput" placeholder="Enter your name">
+            <br><br>
+            <button type="submit" class="submit-btn">Go</button>
+        </form>
+        <p id="counter">Visitors: 0</p>
+    </div>
+
+    <script>
+        // Retrieve the counter from localStorage or set it to 0 if not present
+        var visitorCount = localStorage.getItem('visitorCount') || 0;
+
+        // Update the counter element
+        document.getElementById('counter').textContent = 'Visitors: ' + visitorCount;
+
+        function handleForm(event) {
+            event.preventDefault(); // Prevents the form from submitting in the traditional way
+
+            // Increment the counter
+            visitorCount++;
+
+            // Save the updated counter in localStorage
+            localStorage.setItem('visitorCount', visitorCount);
+
+            // Update the counter element
+            document.getElementById('counter').textContent = 'Visitors: ' + visitorCount;
+
+            var nameInput = document.getElementById('nameInput').value.toLowerCase();
+            var mainContent = document.getElementById('mainContent');
+
+            if (nameInput === 'nono') {
+                // Update content on the same page
+                mainContent.innerHTML = `
+    <div class="message-container">
+        <h2 class="message-header">nono, so for you to know, I am writing this with tears</h2>
+        <p class="message-body">
+            I want you to know that you're the only one who can access this message because you are special to me.
+            I want to tell you that I am sorry if I was annoying sometimes, but really, I love you.
+            Losing you is a nightmare for me. Before I met you, I was scared of love, but after I met you, everything changed.
+            Even when I ask you why you are annoyed, it's because I am afraid that it's me.
+            You don't know how my day goes on without talking to you. It's like hell all day, sleeping, waking up suddenly thinking that you texted me, but no, even at night.
+            And even when I am up, it's just my heart killing my brain and taking the lead, telling me, "Do you see her?" and I am like, "Yes."
+            My heart talks to you. Even if you make me sad, I can't get sad from you. My heart says, "You love her. You can't get sad from her."
+            Even if I was mad at myself because I made you sad once, and this line is a promise. If I meet you and I get sad from you, I'll give you my back.
+            Just stand still, look at my back, and count 1, 2, and you will not continue to 3.
+            I will turn, kiss you on your head, and hug you, telling you I am sorry that I was sad from you for 2 seconds.
+            Please don't leave because I am trying to survive for you. Otherwise, I would have killed myself a year ago. So please don't leave me.
+            I don't know, but my tears are coming right now. It's the first time I feel this from years, so sorry if I act weird or I am over asking about you.
+            <br><br>
+            I want you to know that I truly appreciate you, and all I want to convey in these lines is a simple but heartfelt message:
+            <br><br>
+            <strong>&hearts; I love you, ya 7abibti! and Ramadan Kareem &hearts;</strong>
+        </p>
+    </div>
+`;
+
+            } else if (nameInput === 'mohammed youssef') {
+                // Add your content for Mohammed Youssef
+                mainContent.innerHTML = `
+    <div class="message-container">
+        <h2 class="message-header">Yasta, so you're the only one who can access this page;</h2>
+        <p class="message-body">
+            So this page is exclusive, meant just for you. I wanted to take a moment to express how special you are to me.
+            Every second spent with you is a treasure, and I never imagined I could have someone as wonderful as you in my life.
+            Your presence brings joy and warmth, making each moment memorable.
+            <br><br>
+            I want you to know that I truly appreciate you, and all I want to convey in these lines is a simple but heartfelt message:
+            <br><br>
+            <strong>&hearts; I love you, Yasta! Ramadan Kareem &hearts;</strong>
+        </p>
+    </div>
+`;
+
+
+            } else {
+                // Update content on the same page
+                mainContent.innerHTML = '<h1>Ramadan Kareem, ' + nameInput + '</h1><p>may allah make you happy and bless you in this month and always together</p>';
+            }
+        }
+    </script>
+
+    <footer>
+        powerd by Adel Mohamemd 
+        instagram: dola.am365
+    </footer>
+</body>
+</html>
